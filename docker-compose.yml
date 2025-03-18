@@ -1,0 +1,60 @@
+version: '3'
+
+services:
+  microservice_assistence:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ${SERVICENAME}_service
+    container_name: ${SERVICENAME}_service
+    ports:
+      - "8091:8080"
+    env_file:
+      - .env
+    environment:
+      - ENVIRONMENT=${ENVIRONMENT}
+    depends_on:
+      - postgres
+      - redis
+    volumes:
+      - .:/app
+    networks:
+      - backend
+      - enid_service_network
+
+  postgres:
+    container_name: ${SERVICENAME}_postgres
+    image: postgres:alpine
+    ports:
+      - "5442:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    env_file:
+      - .env
+   
+    networks:
+      - backend
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      retries: 5
+  
+  redis:
+    container_name: ${SERVICENAME}_redis 
+    image: redis:alpine
+    command: sh -c "rm -rf /data/* && redis-server"
+    volumes:
+      - redis_data:/data
+    networks:
+      - backend
+
+volumes:
+  redis_data:
+  postgres_data:
+
+
+networks:
+  backend:
+    driver: bridge
+  enid_service_network:
+    external: true
