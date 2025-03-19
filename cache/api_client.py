@@ -6,7 +6,7 @@ from django.core.cache import cache
 class ApiClient:
     
     def __init__(self):
-        self.base_url = 'http://enid_store:8000/api/enid'
+        self.base_url = 'http://172.21.0.10:8000/api/enid'
         self.session = requests.Session()  # Crear una sesión
         self.headers = {
             'X-Store-Id': '1',
