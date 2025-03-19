@@ -1,6 +1,3 @@
-from rest_framework.response import Response
-from rest_framework import status
-import requests
 from django.core.cache import cache
 from cache.api_client import ApiClient
 

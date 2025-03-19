@@ -7,13 +7,7 @@ class ApiClient:
     
     def __init__(self):
         self.base_url = 'https://enidservice.com/api/enid'
-
-        self.headers = {
-            'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:136.0) Gecko/20100101 Firefox/136.0',
-            'Accept': 'application/json, text/plain, */*',
-            'X-Store-Id': '1',
-            'Referer': 'https://enidservice.com/'
-        }
+        self.headers = {}
     
     def top_sellers(self):
         try:
