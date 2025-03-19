@@ -6,7 +6,7 @@ from django.core.cache import cache
 class ApiClient:
     
     def __init__(self):
-        self.base_url = 'https://enidservice.com/api/enid'
+        self.base_url = 'http://enidservice.com/api/enid'
         self.headers = {}
     
     def top_sellers(self):
