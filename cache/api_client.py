@@ -7,12 +7,17 @@ class ApiClient:
     
     def __init__(self):
         self.base_url = 'https://enidservice.com/api/enid'
-        self.headers = {}
+        self.session = requests.Session()  # Crear una sesión
+        self.headers = {
+            'X-Store-Id': '1',
+            'Referer': 'https://enidservice.com/'
+        }
     
     def top_sellers(self):
         try:
             url = f'{self.base_url}/productos/top-sellers/'
-            response = requests.get(url, headers=self.headers)
+            # Usar la sesión para mantener las cookies
+            response = self.session.get(url, headers=self.headers, timeout=5)
             response.raise_for_status()
             return response.json()
         except requests.RequestException as e:
