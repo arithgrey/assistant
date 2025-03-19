@@ -200,3 +200,13 @@ CORS_ALLOW_HEADERS = [
     'X-Store-Id',
     'Access-Control-Allow-Headers',
 ]
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': 'redis://assistence_redis:6379/0',  
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+        }
+    }
+}

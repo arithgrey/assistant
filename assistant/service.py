@@ -18,10 +18,10 @@ class AIService:
         
         return "\n".join(history)
 
-    def generate_response(self, message: str, conversation: Conversation, top_sellers: list) -> str:
+    def generate_response(self, message: str, conversation: Conversation, top_sellers: list, accesorios: list) -> str:
         try:
             
-            context = AIContext.context(top_sellers=top_sellers)
+            context = AIContext.context(top_sellers=top_sellers, accesorios=accesorios)
             chat_history = self.conversation_history(conversation)
             
             
