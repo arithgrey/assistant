@@ -6,18 +6,13 @@ from django.core.cache import cache
 class ApiClient:
     
     def __init__(self):
-        self.base_url = 'http://172.21.0.10:8080/api/enid'
-        self.session = requests.Session()  # Crear una sesión
-        self.headers = {
-            'X-Store-Id': '1',
-            'Referer': 'https://enidservice.com/'
-        }
+        self.base_url = 'https://enidservice.com/api/enid'
+        self.headers = {}
     
     def top_sellers(self):
         try:
             url = f'{self.base_url}/productos/top-sellers/'
-            # Usar la sesión para mantener las cookies
-            response = self.session.get(url, headers=self.headers, timeout=5)
+            response = requests.get(url=url)
             response.raise_for_status()
             return response.json()
         except requests.RequestException as e:

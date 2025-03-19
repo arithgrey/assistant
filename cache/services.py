@@ -21,6 +21,7 @@ class CacheService:
             raise Exception(f'Error al obtener los datos: {str(e)}')
     
     def top_sellers(self):
+        
         try:
             return self.get_cached_data(
                 cache_key='_top_sellers_request',
