@@ -6,7 +6,7 @@ echo "Running makemigrations and migrate..."
 echo "Running makemigrations and migrate..."
 echo "Running makemigrations and migrate..."
 
-
+python manage.py makemigrations conversation
 python manage.py makemigrations assistant
 python manage.py makemigrations message
 python manage.py migrate
