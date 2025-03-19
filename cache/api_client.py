@@ -11,7 +11,7 @@ class ApiClient:
     
     def top_sellers(self):
         try:
-            url = f'{self.base_url}/productos/top-sellers/'
+            url = f'{self.base_url}/productos/top-sellers/?format=json'
             response = requests.get(url=url,verify=False)
             response.raise_for_status()
             return response.json()
