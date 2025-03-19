@@ -6,13 +6,13 @@ from django.core.cache import cache
 class ApiClient:
     
     def __init__(self):
-        self.base_url = 'http://microservice_enid/api/enid'
+        self.base_url = 'http://enidservice.com/api/enid'
         self.headers = {}
     
     def top_sellers(self):
         try:
             url = f'{self.base_url}/productos/top-sellers/'
-            response = requests.get(url=url)
+            response = requests.get(url=url,verify=False)
             response.raise_for_status()
             return response.json()
         except requests.RequestException as e:
