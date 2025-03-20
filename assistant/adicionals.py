@@ -20,7 +20,8 @@ class Adicionals:
                     1Barra Recta
                     1Barra Z
                     6Seguro (collarin para ajustar los disos)
-                    enlace: https://enidservice.com/pesas-y-barras/para-los-que-van-iniciando 
+
+                    https://enidservice.com/pesas-y-barras/para-los-que-van-iniciando 
             """,
             },
             
@@ -37,8 +38,9 @@ class Adicionals:
                     2Maneral para mancuerna
                     1Barra Recta
                     1Barra Z
-                    6Seguro (collarin para ajustar los disos) 
-                    enlace: https://enidservice.com/pesas-y-barras/para-los-que-van-iniciando-42kg
+                    6Seguro (collarin para ajustar los disos)
+
+                    https://enidservice.com/pesas-y-barras/para-los-que-van-iniciando-42kg
                 """
             },
             "KIT DE PESAS 20 DISCOS 50KG EN TOTAL, BARRA Z, BARRA RECTA Y MANCUERNAS | ENVÍO GRATIS":{
@@ -54,7 +56,8 @@ class Adicionals:
                     1Barra Recta
                     1Barra Z
                     6Seguro (collarin para ajustar los disos)
-                    enlace: https://enidservice.com/pesas-y-barras/para-los-que-van-iniciando-50kg
+
+                    https://enidservice.com/pesas-y-barras/para-los-que-van-iniciando-50kg
                 """
             },
             "SOPORTE DE INMERSIÓN PARA ENTRENAMIENTO FÍSICO, BARRA DE INMERSIÓN | ENVÍO GRATIS":{
@@ -63,7 +66,7 @@ class Adicionals:
                 Peso total 15.00 Kg
                 Super resistentes y durables
                 
-                enlace: https://enidservice.com/calistenia/para-los-que-van-rapido
+                https://enidservice.com/calistenia/para-los-que-van-rapido
                 """
             },
             "PARA QUIEN QUIERE TODO, SIN ESPACIO":{
@@ -83,7 +86,8 @@ class Adicionals:
                     1Barra Z
                     1Barra Romana 1kg
                     6Seguro (collarin para ajustar los disos)
-                    enlace: https://enidservice.com/pesas-y-barras/para-quien-quiere-todo-sin-espacio
+
+                    https://enidservice.com/pesas-y-barras/para-quien-quiere-todo-sin-espacio
                 """
             },
             "PARA LOS QUE YA NO VAN AL GYM":{
@@ -102,8 +106,9 @@ class Adicionals:
                     1Barra Recta
                     1Barra Z
                     1Barra Romana 1kg
-                    10Seguro (collarin para ajustar los disos) 
-                    enlace: https://enidservice.com/pesas-y-barras/para-los-que-ya-no-van-al-gym
+                    10Seguro (collarin para ajustar los disos)
+
+                    https://enidservice.com/pesas-y-barras/para-los-que-ya-no-van-al-gym
                 """
             },
             "PARA LOS QUE HACEN CALISTENIA":{
@@ -115,7 +120,7 @@ class Adicionals:
                     1Barra para calistenia
                     1 Gancho para box
                     8Taquetes expansivos 
-                    enlace: https://enidservice.com/calistenia/para-los-que-hacen-calistenia
+                    https://enidservice.com/calistenia/para-los-que-hacen-calistenia
                 """
             },
             "PARA LOS QUE SOLO OCUPAN MANCUERNAS":{
@@ -130,7 +135,8 @@ class Adicionals:
                     4Disco de 2KG
                     2Maneral para mancuerna
                     4Seguro (collarin para ajustar los disos)
-                    enlace: https://enidservice.com/pesas-y-barras/para-los-que-solo-ocupan-mancuernas-2
+
+                    https://enidservice.com/pesas-y-barras/para-los-que-solo-ocupan-mancuernas-2
                 
                 """
             },
@@ -146,7 +152,8 @@ class Adicionals:
                     4Disco de 2KG
                     2Maneral para mancuerna
                     4Seguro (collarin para ajustar los disos)
-                enlace: https://enidservice.com/pesas-y-barras/para-los-que-solo-ocupan-mancuernas-3
+
+                https://enidservice.com/pesas-y-barras/para-los-que-solo-ocupan-mancuernas-3
                 
                 """
             },
@@ -160,8 +167,9 @@ class Adicionals:
 
                     8Disco de 2KG
                     2Maneral para mancuerna
-                    4Seguro (collarin para ajustar los disos) 
-                enlace: https://enidservice.com/pesas-y-barras/para-los-que-solo-ocupan-mancuernas-4
+                    4Seguro (collarin para ajustar los disos)
+
+                https://enidservice.com/pesas-y-barras/para-los-que-solo-ocupan-mancuernas-4
                 """
             },
             "PARA LOS QUE SOLO OCUPAN MANCUERNAS":{
@@ -174,8 +182,9 @@ class Adicionals:
 
                     8Disco de 1KG
                     2Maneral para mancuerna
-                    4Seguro (collarin para ajustar los disos) 
-                enlace: https://enidservice.com/pesas-y-barras/para-los-que-solo-ocupan-mancuernas-5
+                    4Seguro (collarin para ajustar los disos)
+
+                https://enidservice.com/pesas-y-barras/para-los-que-solo-ocupan-mancuernas-5
                 """
             },
             "PARA LOS QUE OCUPAN MANCUERNAS y BARRA":{
@@ -193,7 +202,8 @@ class Adicionals:
                     2Maneral para mancuerna
                     1Barra Recta
                     6Seguro (collarin para ajustar los disos)
-                    enlace: https://enidservice.com/pesas-y-barras/para-los-que-ocupan-mancuernas-y-barra
+
+                    https://enidservice.com/pesas-y-barras/para-los-que-ocupan-mancuernas-y-barra
                 """
             },
             "PARA LOS QUE SOLO OCUPAN BARRA":{
@@ -209,14 +219,14 @@ class Adicionals:
                     2Disco de 2KG
                     2Disco de 1KG
         
-                enlace: https://enidservice.com/pesas-y-barras/para-los-que-solo-ocupan-barra
+                https://enidservice.com/pesas-y-barras/para-los-que-solo-ocupan-barra
                 """
             },
             "PARA LOS QUE DISFRUTAN DE INTERCAMBIAR PESOS":{
                 """
                 KIT DE 2 SEGUROS PAR}A BARRAS Y MANCUERNAS STANDARD DE UNA PULGADA, DE METAL, PARA EL INTERCAMBIO RÁPIDO Y PRÁCTICO DE DISCOS | ENVÍO GRATIS
                 Peso total 0.50 Kg
-                enlace: https://enidservice.com/accesorios/para-los-que-disfrutan-de-intercambiar-pesos
+                https://enidservice.com/accesorios/para-los-que-disfrutan-de-intercambiar-pesos
                 """
             },
             "PARA LOS QUE QUIEREN HACER REMO CON PESAS":{
@@ -224,7 +234,7 @@ class Adicionals:
                BARRA ROMANA ESTÁNDAR DE UNA PULGADA 15KG ACERO BLACK | ENVÍO GRATIS
 
                 Peso total 15.00 Kg
-                enlace: https://enidservice.com/accesorios/para-los-que-quieren-hacer-remo-con-pesas 
+                https://enidservice.com/accesorios/para-los-que-quieren-hacer-remo-con-pesas 
                 """
             },
             "PARA LOS QUE QUIEREN HACER EL PREDICADOR EN CASA":{
@@ -232,7 +242,8 @@ class Adicionals:
                 BARRA Z SOLIDA DE ACERO CON SEGUROS, 12KG EN TOTAL SOPORTA 350KG PARA DISCOS DE UNA PULGADA ESTÁNDAR | ENVÍO GRATIS
 
                 Peso total 12.00 Kg
-                enlace: https://enidservice.com/accesorios/para-los-que-quieren-hacer-el-predicador-en-casa
+                
+                https://enidservice.com/accesorios/para-los-que-quieren-hacer-el-predicador-en-casa
                 """
             },
             "PARA LOS QUE QUIEREN HACER EL PREDICADOR EN CASA SIN EXCEDERSE":{
@@ -241,7 +252,7 @@ class Adicionals:
 
                 Peso total 1.00 Kg
 
-                enlace: https://enidservice.com/accesorios/para-los-que-quieren-hacer-el-predicador-en-casa-s 
+                https://enidservice.com/accesorios/para-los-que-quieren-hacer-el-predicador-en-casa-s 
                 """
             },
             "PARA LOS QUE QUIEREN HACER REMO CON PESAS SIN EXCEDERSE":{
@@ -249,7 +260,7 @@ class Adicionals:
                 BARRA ROMANA CON 2 SEGUROS PARA DISCOS STANDARD DE UNA PULGADA, SOPORTA 60KG | ENVÍO GRATIS
 
                 Peso total 1.00 Kg
-                enlace: https://enidservice.com/accesorios/para-los-que-quieren-hacer-remo-con-pesas-sin-exce
+                https://enidservice.com/accesorios/para-los-que-quieren-hacer-remo-con-pesas-sin-exce
                 """
         }
         }
