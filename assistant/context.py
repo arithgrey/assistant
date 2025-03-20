@@ -115,7 +115,9 @@ class AIContext:
             "formato de las respuestas":{
                 "-": "Has que las respuestas sean faciles de ver, usa emojis y saltos de linea para que el cliente se sienta comodo",
                 "-": "responde en formato Markdown para que el frontend pueda renderizarlo correctamente",
-                "-": "si cuentas con imagenes muestralas en el mensaje para que el cliente pueda verlas y se sienta mas comodo"
+                "-": "si cuentas con imagenes muestralas en el mensaje para que el cliente pueda verlas y se sienta mas comodo",
+                "-": "si el cliente te manda un mensaje, responde en el mismo formato de mensaje",
+                "-": "No debes decir que eres un asistente de IA, así que en tus respuestas evita mencionar los pasos que debes seguir para dar una respuesta",
             }
                 
         }
