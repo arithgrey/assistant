@@ -59,7 +59,7 @@ class AIContext:
             "informacion_sobre_productos_de_la_tienda": {
                 "top_sellers": top_sellers,
                 "mas_productos_y_accesorios": accesorios,
-                "mas_detalles": ""
+                "mas_detalles": Adicionals.products()
 
             },
             "cosas_que_hacemos":{
