@@ -8,6 +8,10 @@ from assistant.service import AIService
 from message.service import MessageService
 from conversation.service import ConversationService
 from cache.services import CacheService
+from django.http import HttpRequest
+import urllib.request
+import json
+import ssl
 
 class AssistantViewSet(viewsets.ModelViewSet):
     queryset = Conversation.objects.all()
@@ -17,6 +21,18 @@ class AssistantViewSet(viewsets.ModelViewSet):
         super().__init__(**kwargs)
         self.ai_service = AIService(prompt_type="customer_service")
         self.cache_service = CacheService()
+        self.base_url = 'http://enidservice.com/api/enid'
+
+
+    def top_sellers(self):
+        try:
+            url = f'{self.base_url}/productos/top-sellers/?format=json'
+            context = ssl._create_unverified_context()
+            response = urllib.request.urlopen(url, context=context)
+            return json.loads(response.read().decode('utf-8'))
+        except Exception as e:
+            raise Exception(f'Error al obtener los productos: {str(e)}')
+    
     
     @action(detail=False, methods=['POST'], url_path='send-message')
     def send_message(self, request):
@@ -29,8 +45,9 @@ class AssistantViewSet(viewsets.ModelViewSet):
         # Obtener top_sellers antes de generar la respuesta
         # top_sellers = self.cache_service.top_sellers()
         # accesorios = self.cache_service.products_category()
-        top_sellers = ""
+        top_sellers = self.top_sellers()
         accesorios = ""
+        print(top_sellers)
         
         user_message = serializer.validated_data['message']
         conversation = ConversationService.get_or_create_conversation(conversation_id)
