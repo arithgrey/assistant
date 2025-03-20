@@ -28,9 +28,7 @@ class AssistantViewSet(viewsets.ModelViewSet):
         
         # Obtener top_sellers antes de generar la respuesta
         top_sellers = self.cache_service.top_sellers()
-        print(top_sellers)
-        # accesorios = self.cache_service.products_category()
-        accesorios = ""
+        accesorios = self.cache_service.products_category()
         
         user_message = serializer.validated_data['message']
         conversation = ConversationService.get_or_create_conversation(conversation_id)
