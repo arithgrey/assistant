@@ -26,8 +26,10 @@ class ApiClient:
     def products_category(self, category_slug: str ) -> list:
         try:
             url = f'{self.base_url}/product-category/{category_slug}/'
-            response = requests.get(url, headers=self.headers)
-            response.raise_for_status()
-            return response.json()
+            context = ssl._create_unverified_context()
+            response = urllib.request.urlopen(url, context=context)
+            return json.loads(response.read().decode('utf-8'))
+
         except requests.RequestException as e:
-            raise Exception(f'Error al obtener productos por categoría: {str(e)}')
+            print(f'Error al obtener productos por categoría: {str(e)}')
+            return []  # Devolver lista vacía en caso de error
