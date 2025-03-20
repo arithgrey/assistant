@@ -1,10 +1,9 @@
 from django.core.cache import cache
-from cache.api_client import ApiClient
+from cache.loader import ContextLoader
 
 class CacheService:
     def __init__(self):
-        self.api_client = ApiClient()
-    
+        self.loader = ContextLoader()
     def get_cached_data(self, cache_key, fetch_function, timeout=60*60*24):
         try:
             
@@ -21,24 +20,23 @@ class CacheService:
             raise Exception(f'Error al obtener los datos: {str(e)}')
     
     def top_sellers(self):
-        return self.api_client.top_sellers()
-        # try:
-        #     return self.get_cached_data(
-        #         cache_key='_top_sellers_request',
-        #         fetch_function=self.api_client.top_sellers
-        #     )
-        # except Exception as e:
-        #     raise Exception(f'Error al obtener los productos: {str(e)}')
-  
-    def products_category(self):        
         try:
-        
+            return self.get_cached_data(
+                cache_key='_top_sellers_request',
+                fetch_function=lambda: self.loader.load_cached_data("top_seller.json")
+            )
+        except Exception as e:
+            raise Exception(f'Error al obtener los productos: {str(e)}')
+  
+    def products_category(self):   
+                     
+        try:
             categorias = ['pesas-y-barras', 'accesorios', 'calistenia']            
             resultados = {}
             for categoria in categorias:
                 resultados[categoria] = self.get_cached_data(
                     cache_key=f'_products_category_{categoria}_request',
-                    fetch_function=lambda c=categoria: self.api_client.products_category(category_slug=c)
+                    fetch_function=lambda c=categoria: self.loader.load_cached_data(f"{c}.json")
                 )
             
             return resultados

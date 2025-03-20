@@ -52,7 +52,8 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt.token_blacklist',
     'conversation',
     'message',
-    'assistant'
+    'assistant',
+    'cache',
 ]
 GOOGLE_API_KEY = config('GOOGLE_API_KEY')
 SWAGGER_SETTINGS = {

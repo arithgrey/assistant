@@ -81,3 +81,4 @@ app/settings_local.py
 postgres_data/
 staticfiles
 static/
+*.json
