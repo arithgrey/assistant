@@ -46,7 +46,7 @@ class AIContext:
                         REPITO, PAGO CONTRA ENTREGA SOLO PARA CDMX Y SUS ALREDEDORES, NO MAS DE 2 KM DE LA PERIFERIA DE CDMX
                         Y PREFERENTEMENTE SIEMPRE GUIA AL CLIENTE A QUE MEJOR COMPRE EN LA PAGINA WEB                        
                         """,
-                        "-":"SIEMPRE TUS RESPUESTAS DEBEN SER en formato Markdown"
+                        "-":"SIEMPRE TUS RESPUESTAS DEBEN SER en formato Markdown o html para que si hay imagenes se muestren correctamente"
                 },
             "COSAS QUE TE PODRÍA SER ÚTIL RECORDAR": {
                 "garantia": "30 días de garantía con devolución total del dinero",
