@@ -1,0 +1,135 @@
+{
+  "count": 2,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "id": 3,
+      "images": [
+        {
+          "id": 3,
+          "object_id": 3,
+          "title": null,
+          "description": null,
+          "image": "http://enidservice.com/uploads/barras_parlelas.jpg",
+          "is_main": true,
+          "content_type": 12,
+          "get_image_url": "https://enidservice.com/api/enid//uploads/barras_parlelas.jpg"
+        },
+        {
+          "id": 4,
+          "object_id": 3,
+          "title": null,
+          "description": null,
+          "image": "http://enidservice.com/uploads/barras_parlelas_1.jpg",
+          "is_main": false,
+          "content_type": 12,
+          "get_image_url": "https://enidservice.com/api/enid//uploads/barras_parlelas_1.jpg"
+        }
+      ],
+      "short_name": "PARA LOS QUE VAN RÁPIDO",
+      "formatted_price": "$1599.00",
+      "formatted_cost": "$0.00",
+      "formatted_weight": "10.00 Kg",
+      "category": {
+        "id": 2,
+        "name": "Calistenia",
+        "slug": "calistenia"
+      },
+      "name": "PARA LOS QUE VAN RÁPIDO",
+      "price": "1599.00",
+      "cost": "0.00",
+      "weight": "10.00",
+      "count_discs": false,
+      "top_seller": true,
+      "primary": true,
+      "slug": "para-los-que-van-rapido",
+      "specific_name": "SOPORTE DE INMERSIÓN PARA ENTRENAMIENTO FÍSICO, BARRA DE INMERSIÓN | ENVÍO GRATIS",
+      "name_product_group": null,
+      "express_payment_link": "https://buy.stripe.com/14kaFLaVK21l3gk8yG",
+      "min_stock": 1,
+      "max_stock": 100,
+      "product_group": null,
+      "primary_components": []
+    },
+    {
+      "id": 7,
+      "images": [
+        {
+          "id": 14,
+          "object_id": 7,
+          "title": null,
+          "description": null,
+          "image": "http://enidservice.com/uploads/IMG_barras_1.jpeg",
+          "is_main": false,
+          "content_type": 12,
+          "get_image_url": "https://enidservice.com/api/enid//uploads/IMG_barras_1.jpeg"
+        },
+        {
+          "id": 15,
+          "object_id": 7,
+          "title": null,
+          "description": null,
+          "image": "http://enidservice.com/uploads/IMG_barras_2.jpeg",
+          "is_main": false,
+          "content_type": 12,
+          "get_image_url": "https://enidservice.com/api/enid//uploads/IMG_barras_2.jpeg"
+        },
+        {
+          "id": 16,
+          "object_id": 7,
+          "title": null,
+          "description": null,
+          "image": "http://enidservice.com/uploads/IMG_barras_3.jpeg",
+          "is_main": false,
+          "content_type": 12,
+          "get_image_url": "https://enidservice.com/api/enid//uploads/IMG_barras_3.jpeg"
+        },
+        {
+          "id": 17,
+          "object_id": 7,
+          "title": null,
+          "description": null,
+          "image": "http://enidservice.com/uploads/IMG_barras_4.jpeg",
+          "is_main": false,
+          "content_type": 12,
+          "get_image_url": "https://enidservice.com/api/enid//uploads/IMG_barras_4.jpeg"
+        },
+        {
+          "id": 18,
+          "object_id": 7,
+          "title": null,
+          "description": null,
+          "image": "http://enidservice.com/uploads/IMG_barras_5.jpeg",
+          "is_main": true,
+          "content_type": 12,
+          "get_image_url": "https://enidservice.com/api/enid//uploads/IMG_barras_5.jpeg"
+        }
+      ],
+      "short_name": "PARA LOS QUE HACEN CALISTENIA",
+      "formatted_price": "$1600.00",
+      "formatted_cost": "$0.00",
+      "formatted_weight": "0.50 Kg",
+      "category": {
+        "id": 2,
+        "name": "Calistenia",
+        "slug": "calistenia"
+      },
+      "name": "PARA LOS QUE HACEN CALISTENIA",
+      "price": "1600.00",
+      "cost": "0.00",
+      "weight": "0.50",
+      "count_discs": false,
+      "top_seller": true,
+      "primary": false,
+      "slug": "para-los-que-hacen-calistenia",
+      "specific_name": "BARRAS 8 EN 1 SUPER REFORZADAS ENVÍO GRATIS",
+      "name_product_group": null,
+      "express_payment_link": "https://buy.stripe.com/28o15b7JyfSbaIMeX8",
+      "min_stock": 1,
+      "max_stock": 100,
+      "product_group": null,
+      "primary_components": []
+    }
+  ]
+}
