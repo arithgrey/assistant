@@ -21,14 +21,14 @@ class CacheService:
             raise Exception(f'Error al obtener los datos: {str(e)}')
     
     def top_sellers(self):
-        
-        try:
-            return self.get_cached_data(
-                cache_key='_top_sellers_request',
-                fetch_function=self.api_client.top_sellers
-            )
-        except Exception as e:
-            raise Exception(f'Error al obtener los productos: {str(e)}')
+        return self.api_client.top_sellers()
+        # try:
+        #     return self.get_cached_data(
+        #         cache_key='_top_sellers_request',
+        #         fetch_function=self.api_client.top_sellers
+        #     )
+        # except Exception as e:
+        #     raise Exception(f'Error al obtener los productos: {str(e)}')
   
     def products_category(self):        
         try:
