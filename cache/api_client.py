@@ -23,7 +23,7 @@ class ApiClient:
             print(f'Error al obtener los productos: {str(e)}')
             return []  # Devolver lista vacía en caso de error
     
-    def products_category(self, category_slug: str ) -> list:
+    def products_category(self, category_slug: str ):
         try:
             url = f'{self.base_url}/product-category/{category_slug}/'
             context = ssl._create_unverified_context()
