@@ -21,7 +21,7 @@ class AssistantViewSet(viewsets.ModelViewSet):
         super().__init__(**kwargs)
         self.ai_service = AIService(prompt_type="customer_service")
         self.cache_service = CacheService()
-        self.base_url = 'http://enidservice.com/api/enid'
+        self.base_url = 'http://localhost:8000/api/enid'
 
 
     def top_sellers(self):
@@ -31,7 +31,8 @@ class AssistantViewSet(viewsets.ModelViewSet):
             response = urllib.request.urlopen(url, context=context)
             return json.loads(response.read().decode('utf-8'))
         except Exception as e:
-            raise Exception(f'Error al obtener los productos: {str(e)}')
+            print(f'Error al obtener los productos: {str(e)}')
+            return []
     
     
     @action(detail=False, methods=['POST'], url_path='send-message')
