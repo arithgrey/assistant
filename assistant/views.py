@@ -1,53 +1,62 @@
-from rest_framework import viewsets, status
-from rest_framework.response import Response
-from rest_framework.decorators import action
+import google.generativeai as genai
+from django.conf import settings
 from conversation.models import Conversation
-from conversation.serializers import ConversationSerializer
-from message.serializers import MessageBotSerializerValidator
-from assistant.service import AIService
-from message.service import MessageService
-from conversation.service import ConversationService
-import json
-import urllib.request
-import ssl
-class AssistantViewSet(viewsets.ModelViewSet):
-    queryset = Conversation.objects.all()
-    serializer_class = ConversationSerializer
+from assistant.context import AIContext
+from cache.services import CacheService
+from assistant.tools import Tools
 
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-        self.ai_service = AIService(prompt_type="customer_service")
-    
+from langchain.memory import ConversationBufferMemory
+from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain.agents import initialize_agent, AgentType
 
-    @action(detail=False, methods=['POST'], url_path='send-message')
-    def send_message(self, request):
-        conversation_id = request.data.get('conversation_id')
-        
-        serializer = MessageBotSerializerValidator(data=request.data)
-        if not serializer.is_valid():
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)            
-        
-        user_message = serializer.validated_data['message']
-        conversation = ConversationService.get_or_create_conversation(conversation_id)
-        user_message = MessageService.create_user_message(conversation, user_message)
-        response = self.ai_service.generate_response(message=user_message, conversation=conversation)
-        
-        ia_message = MessageService.create_ia_message(conversation, response)
 
-        return Response({
-            'conversation_id': conversation.id,
-            'status': 'success',
-            'conversation': {
-                'id': conversation.id,
-                'unique_identifier': str(conversation.unique_identifier)
-            },
-            'user_message': {
-                'message_id': user_message.id,
-                'content': user_message.content
-            },
-            'ai_response': {
-                'message_id': ia_message.id,
-                'content': ia_message.content
-            }
-        }, status=status.HTTP_201_CREATED)
-   
+class AIService:
+    def __init__(self, prompt_type: str = None):
+        genai.configure(api_key=settings.GOOGLE_API_KEY)
+        self.model = genai.GenerativeModel("gemini-1.5-flash-002")
+        self.prompt_type = prompt_type
+        self.cache_service = CacheService()
+        self.tools = Tools()
+
+    def conversation_history(self, conversation: Conversation) -> str:
+        history = []
+        for message in conversation.messages.all().order_by('id'):
+            role = "[ASISTENTE]" if message.is_ia else "[CLIENTE]"
+            history.append(f"{role}: {message.content}")
+        return "\n".join(history)
+
+
+    def generate_response(self, message: str, conversation: Conversation) -> str:
+        try:
+            context = AIContext.context()
+            chat_history_text = self.conversation_history(conversation)
+
+            full_prompt = f"""
+            Eres un asistente que puede usar herramientas. 
+
+            {context}
+            ESTE ES EL HISTORIAL DE LA CONVERSACIÓN: {chat_history_text} 
+            ESTA ES LA NUEVA PREGUNTA DEL CLIENTE: {message}
+            """
+
+            # Langchain LLM
+            langchain_llm = ChatGoogleGenerativeAI(
+                model="gemini-1.5-flash-002",
+                google_api_key=settings.GOOGLE_API_KEY,
+                convert_system_message_to_human=True
+            )
+
+            memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
+
+            agent = initialize_agent(
+                tools=self.tools.get_tools(),
+                llm=langchain_llm,
+                agent=AgentType.CONVERSATIONAL_REACT_DESCRIPTION,
+                verbose=True,
+                memory=memory
+            )
+
+            return agent.run(full_prompt)
+
+        except Exception as e:
+            return f"Error generando respuesta con Langchain: {str(e)}"
