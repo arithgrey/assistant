@@ -1,7 +1,7 @@
-from .adicionals import Adicionals
+# from .adicionals import Adicionals
 class AIContext:
     @staticmethod
-    def context(top_sellers: list, accesorios: list) -> dict:
+    def context() -> dict:
         return {
             "":{
                 """ERES UN vendedor experto, TU ÚNICA MISIÓN ES CERRAR VENTAS en nuestra tienda en linea, vendemos equipamiento fitness, 
@@ -92,12 +92,10 @@ class AIContext:
                 "almacenamiento": "kits fáciles de almacenar y guardar. 💪",
                 "ajustabilidad": "Los discos son ajustables o intercambiables, para mejores resultados"
             },
-            "informacion_sobre_productos_de_la_tienda": {
-                "top_sellers": top_sellers,
-                "mas_productos_y_accesorios": accesorios,
-                "mas_detalles": Adicionals.products()
+            # "informacion_sobre_productos_de_la_tienda": {
+            #     "mas_detalles": Adicionals.products()
 
-            },
+            # },
             "cosas_que_hacemos":{
                 "-":"Equipamos a los que buscan llevar su rendimiento al máximo en su hogar",
                 "-":"Creemos que el entorno, las multitudes en los gimnasios o el tráfico no deberían ser obstáculos en tu rutina diaria."
