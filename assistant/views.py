@@ -7,7 +7,6 @@ from message.serializers import MessageBotSerializerValidator
 from assistant.service import AIService
 from message.service import MessageService
 from conversation.service import ConversationService
-from cache.services import CacheService
 import json
 import urllib.request
 import ssl
@@ -18,7 +17,6 @@ class AssistantViewSet(viewsets.ModelViewSet):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.ai_service = AIService(prompt_type="customer_service")
-        self.cache_service = CacheService()
         self.context = ssl._create_unverified_context()
     
 
@@ -30,18 +28,13 @@ class AssistantViewSet(viewsets.ModelViewSet):
         if not serializer.is_valid():
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)            
         
-        # Obtener top_sellers antes de generar la respuesta
-        top_sellers = self.cache_service.top_sellers()
-        #accesorios = self.cache_service.products_category()
-        accesorios =""
+        
         user_message = serializer.validated_data['message']
         conversation = ConversationService.get_or_create_conversation(conversation_id)
         user_message = MessageService.create_user_message(conversation, user_message)
         response = self.ai_service.generate_response(
             message=user_message, 
-            conversation=conversation, 
-            top_sellers=top_sellers,
-            accesorios=accesorios)
+            conversation=conversation)
         
         ia_message = MessageService.create_ia_message(conversation, response)
 

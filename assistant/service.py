@@ -2,12 +2,15 @@ import google.generativeai as genai
 from django.conf import settings
 from conversation.models import Conversation
 from assistant.context import AIContext
+from cache.services import CacheService
 
 class AIService:
     def __init__(self, prompt_type: str = None):
         genai.configure(api_key=settings.GOOGLE_API_KEY)
         self.model = genai.GenerativeModel("gemini-1.5-flash-002")
         self.prompt_type = prompt_type
+        self.cache_service = CacheService()
+
 
     def conversation_history(self, conversation: Conversation) -> str:
     
@@ -18,9 +21,11 @@ class AIService:
         
         return "\n".join(history)
 
-    def generate_response(self, message: str, conversation: Conversation, top_sellers: list, accesorios: list) -> str:
+    def generate_response(self, message: str, conversation: Conversation) -> str:
         try:
-            
+            top_sellers = self.cache_service.top_sellers()
+            accesorios = self.cache_service.products_category()
+
             context = AIContext.context(top_sellers=top_sellers, accesorios=accesorios)
             chat_history = self.conversation_history(conversation)
             
