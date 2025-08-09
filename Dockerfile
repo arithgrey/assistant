@@ -8,7 +8,6 @@ WORKDIR /app
 
 COPY requirements.txt /app/
 RUN pip install --upgrade pip && pip install -r requirements.txt
-
 COPY . .
 
 # Copia el script de entrada al contenedor
